@@ -1,0 +1,20 @@
+Si alguno de ustedes NO quiere aplicar esta regla al main, ya sea por performance u otro motivo, les recomiendo "declarar el tipo en la clase PaginationDto"
+
+Adjunto ejemplo:
+
+export class PaginationDto {
+    
+    @IsOptional()
+    @IsPositive()
+    @IsNumber()
+    @Min(1)
+    @Type(() => Number)
+    limit?: number;
+ 
+    @IsOptional()
+    @IsPositive()
+    @IsNumber()
+    @Type(() => Number)
+    offset?: number;
+}
+////////////////////////////////////////////////////////////////////////////////
